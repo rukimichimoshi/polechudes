@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+	<div style="background-image: url(west.jpg); height: 1000px; width: 100%; background-size: 100% 100%">
+
+		<h1 class="score ml-5">0</h1>
+		<img class="cowboy1" src="shooter.png" alt="" style="position: absolute; width: 6%; margin-left: 20%; margin-top: 19%; ">
+		<img class="cowboy1" src="shooter.png" alt="" style="position: absolute; width: 6%; margin-left: 60%; margin-top: 16%; ">
+		<img class="cowboy1" src="shooter.png" alt="" style="position: absolute; width: 6%; margin-left: 10%; margin-top: 12%; ">
+		<img class="cowboy1" src="shooter.png" alt="" style="position: absolute; width: 6%; margin-left: 40%; margin-top: 13%; ">
+
+		<img class="cowboy2" src="cowboy.png" alt="" style="position: absolute; width: 5%; margin-left: 10%; margin-top: 30%; ">
+		<img class="cowboy2" src="cowboy.png" alt="" style="position: absolute; width: 5%; margin-left: 40%; margin-top: 30%; ">
+		<img class="cowboy2" src="cowboy.png" alt="" style="position: absolute; width: 5%; margin-left: 60%; margin-top: 30%; ">
+		<img class="cowboy2" src="cowboy.png" alt="" style="position: absolute; width: 5%; margin-left: 30%; margin-top: 24%; ">
+	
+		<img class="cowboy3" src="cowboy2.png" alt="" style="position: absolute; width: 10%; margin-left: 0%; margin-top: 20%; ">
+		<img class="cowboy3" src="cowboy2.png" alt="" style="position: absolute; width: 10%; margin-left: 25%; margin-top: 10%; ">
+		<img class="cowboy3" src="cowboy2.png" alt="" style="position: absolute; width: 10%; margin-left: 50%; margin-top: 24%; ">
+		<img class="cowboy3" src="cowboy2.png" alt="" style="position: absolute; width: 10%; margin-left: 70%; margin-top: 35%; ">
+
+	</div>
+	<script type="text/javascript">
+		let scores = 0;
+		let scores_block = document.querySelector(".score")
+		let cowboii1 = document.querySelectorAll(".cowboy1")
+		let cowboii2 = document.querySelectorAll(".cowboy2")
+		let cowboii3 = document.querySelectorAll(".cowboy3")
+
+		for(let index = 0; index<4; index = index + 1){
+			cowboii1[index].onclick = function(){
+				cowboii1[index].style.display = "none";
+				func(10)
+			}
+		}
+
+		for(let index = 0; index<4; index = index + 1){
+			cowboii2[index].onclick = function(){
+				cowboii2[index].style.display = "none";
+				func(20)
+			}
+		}
+
+		for(let index = 0; index<4; index = index + 1){
+			cowboii3[index].onclick = function(){
+				cowboii3[index].style.display = "none";
+				func(30)
+			}
+		}
+
+		let func = function(arg){
+		scores = scores + arg	
+		scores_block.innerHTML = scores;
+		}	
+
+		let x = function(){
+			if ( scores >= 100 ) {
+				alert("вы выйграли!")
+			}
+
+			else {
+				alert("вы проиграли!")
+			}
+
+				for(let index = 0; index<4; index = index + 1){
+				cowboii1[index].style.display = "none";
+				cowboii2[index].style.display = "none";
+				cowboii3[index].style.display = "none";
+				}
+			}
+		
+		setTimeout( x , 5000);
+		
+		
+	</script>
+</body>
+</html>
